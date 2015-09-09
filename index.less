@@ -1,0 +1,214 @@
+@environment: desktop; /* used for mixin guard test for .link_mixin */
+@light_blue: #005599;
+@form_gray: #666666;
+@hover_orange: color("#ff5522");
+
+html {
+	color: #000000;
+	background-color: #ffffff;
+	font-size: 12px;
+}
+
+.link_mixin(@color: #ffffff; @vcolor: #ffffff; @hcolor: @hover_orange) when (@environment = desktop) {
+		text-decoration: none;
+		&:link {
+			color: @color;
+		}
+		&:visited {
+			color: @vcolor;
+		}
+		&:hover {
+			color: @hover_orange;
+		}	
+}
+
+#navbar {
+	width: 100%;
+	height: 40px;
+	top: 0%;
+	position: fixed;
+	background-color: @light_blue;
+	color: #ffffff;	
+	a {
+		.link_mixin;
+	}
+	ul {
+		text-align: center;
+		margin-top: 0px;		
+	}
+	li {
+		display: inline;
+		font-size: 15px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+.hline {
+	width:100%;
+	height:1px;
+	background: #000000;
+}
+
+#header {
+	margin-top: 40px;
+	p {
+		text-align: center;
+	}
+}
+
+#name {
+	font-size: 30px;
+	margin-bottom: 0px;
+}
+
+#title {
+	font-size: 15px;
+	margin-top: 0px;
+}
+
+#about_para_1 {
+	float: left;
+	width: 40%;
+	text-align: left;
+	margin-left: 5%;
+}
+
+#about_para_2 {
+	float: right;
+	width: 40%;
+	text-align: left;
+	margin-right: 5%;
+}
+
+.skill_list {
+	display: inline-block;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+.sec_title {
+	clear: both;
+	text-align: center;
+}
+
+.para_title {
+	font-size: 20px;
+	border-top: 2px;
+	border-top-color: #000000;
+	border-bottom: 2px;
+	border-bottom-color: #000000;
+}
+
+.job_info {
+	margin-top: 10px;
+	text-align: left;
+	font-weight: bold;
+}
+
+.job_date {
+	text-indent: 10px;
+	font-style: italic;
+	font-weight: normal;
+}
+
+.job_desc {
+	text-indent: 10px;
+	font-weight: normal;
+	margin-bottom: 10px;
+}
+
+.edu_location {
+	margin-top: 10px;
+	text-align: left;
+	font-weight: bold;
+}
+
+.edu_desc {
+	margin-bottom: 10px;
+	text-align: left;
+	text-indent: 10px;
+}
+
+.whitespace20px {
+	background-color: #ffffff;
+	height: 20px;
+	width: 100%;
+}
+
+#message_form {
+	background-color: @light_blue;
+	width: 80%;
+	margin:auto;
+	input {
+		width: 100%;
+		height: 100%;
+		display: block;
+		text-align: left;
+		background-color: #ffffff;
+		color: @form_gray;
+	}
+}
+
+.label_div {
+	width: 50%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	color: #ffffff;	
+}
+
+.input_div {
+	width: 50%;
+	display: block;
+	text-align: left;
+	margin-left: 25%;
+	margin-right: 25%;
+	background-color: #ffffff;
+	color: @form_gray;	
+}
+
+#message_div {
+	.input_div;
+	height: 100px;
+}
+
+.btn {
+	width: 50%;
+	display: block;
+	text-align: center;
+	margin-left: 25%;
+	margin-right: 25%;
+	background-color: #ffffff;
+	color: @form_gray;	
+	padding-top: 15px;
+}
+
+#footer {
+	width: 100%;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.info_link {
+	text-align: center;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#github {
+	display: inline-block;
+	text-align: center;
+}
+
+#linkedin {
+	display: inline-block;
+	text-align: center;
+}
+
+#copyright {
+	text-align: center;
+	display: block;
+}
