@@ -9,6 +9,13 @@ html {
 	font-size: 12px;
 }
 
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
 .link_mixin(@color: #ffffff; @vcolor: #ffffff; @hcolor: @hover_orange) when (@environment = desktop) {
 		text-decoration: none;
 		&:link {
@@ -22,7 +29,7 @@ html {
 		}	
 }
 
-#navbar {
+#myNavbar {
 	width: 100%;
 	height: 40px;
 	top: 0%;
@@ -51,7 +58,7 @@ html {
 }
 
 #header {
-	margin-top: 40px;
+	margin-top: 60px;
 	p {
 		text-align: center;
 	}
